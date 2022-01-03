@@ -1,7 +1,7 @@
 {
-  "name": "madsen-homepage",
+  "name": "hanno-homepage",
   "version": "1.0.0",
-  "description": "Madsen's porrfolio",
+  "description": "Hanno's portfolio",
   "main": "index.js",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
