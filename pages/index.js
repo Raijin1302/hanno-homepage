@@ -18,15 +18,8 @@ import Section from '../components/section'
 import { BioSection, BioYear } from '../components/bio'
 
 import Paragraph from '../components/paragraph'
-import { GridItem } from '../components/grid-item'
 
-import {
-  IoLogoTwitter,
-  IoLogoInstagram,
-  IoLogoGithub,
-  IoLogoDiscord,
-  IoLogoGoogle
-} from 'react-icons/io5'
+import { IoLogoInstagram, IoLogoGithub, IoLogoGoogle } from 'react-icons/io5'
 
 const Page = () => {
   return (
@@ -35,7 +28,7 @@ const Page = () => {
         <Section delay={0.9}>
           <Box
             borderRadius="lg"
-            bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+            bg={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
             p={3}
             mb={6}
             mt={6}
