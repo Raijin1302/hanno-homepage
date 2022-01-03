@@ -12,7 +12,11 @@ const Main = ({ children, router }) => {
     <Box as="main" pb={4}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Hanno's homepage" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <meta property="og:site_name" content="Hanno Nguyen's Homepage" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/dev_man.png" />
         <title>Hanno Nguyen's - Homepage</title>
       </Head>
       <Navbar path={router.asPath} />
