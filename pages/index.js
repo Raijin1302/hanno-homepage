@@ -19,7 +19,12 @@ import { BioSection, BioYear } from '../components/bio'
 
 import Paragraph from '../components/paragraph'
 
-import { IoLogoInstagram, IoLogoGithub, IoLogoGoogle } from 'react-icons/io5'
+import {
+  IoLogoInstagram,
+  IoLogoGithub,
+  IoLogoGoogle,
+  IoDocumentAttach
+} from 'react-icons/io5'
 
 const Page = () => {
   return (
@@ -28,7 +33,7 @@ const Page = () => {
         <Section delay={0.9}>
           <Box
             borderRadius="lg"
-            bg={useColorModeValue('whiteAlpha.700', 'whiteAlpha.200')}
+            bg={useColorModeValue('#c4c9c736', 'whiteAlpha.200')}
             p={3}
             mb={6}
             mt={6}
@@ -76,7 +81,14 @@ const Page = () => {
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/works">
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+              <Button
+                rightIcon={<ChevronRightIcon />}
+                backgroundColor="#00ebc7"
+                color="#00214d"
+                // colorScheme="teal.300"
+                variant="outline"
+                _hover={{ bg: '#aeffdd' }}
+              >
                 My porfolio
               </Button>
             </NextLink>
@@ -98,6 +110,10 @@ const Page = () => {
           <BioSection>
             <BioYear>2017</BioYear>
             Worked at Appota
+          </BioSection>
+          <BioSection>
+            <BioYear>2018</BioYear>
+            Worked at Webroot - (Remote)
           </BioSection>
           <BioSection>
             <BioYear>2020 to present</BioYear>
@@ -129,7 +145,6 @@ const Page = () => {
                 </Button>
               </Link>
             </ListItem>
-
             <ListItem>
               <Link
                 href="mailto: raijinnguyen1302@gmail.com
@@ -156,6 +171,20 @@ const Page = () => {
                   leftIcon={<Icon as={IoLogoInstagram} />}
                 >
                   @raijin1302
+                </Button>
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://drive.google.com/file/d/1Xn2md1bYoEU_qVx3rIlHGAeO1dm-GQ1e/view?usp=sharing"
+                target="_blank"
+              >
+                <Button
+                  variant="ghost"
+                  colorScheme="teal"
+                  leftIcon={<Icon as={IoDocumentAttach} />}
+                >
+                  @resume.pdf
                 </Button>
               </Link>
             </ListItem>
