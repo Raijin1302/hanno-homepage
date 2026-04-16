@@ -1,31 +1,30 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import Layout from '../components/layouts/main'
-import Fonts from '../components/font'
-import theme from '../lib/theme'
 import { AnimatePresence } from 'framer-motion'
 import ProgressBar from '@badrap/bar-of-progress'
 import Router from 'next/router'
+import Layout from '../components/layouts/main'
+import { TooltipProvider } from '../components/ui/tooltip'
+import '../styles/globals.css'
 
 const progress = new ProgressBar({
-  size: 7,
-  color: '#ddec7e',
+  size: 3,
+  color: '#171717',
   className: 'z-50',
-  delay: 500
+  delay: 200
 })
 
 Router.events.on('routeChangeStart', progress.start)
 Router.events.on('routeChangeComplete', progress.finish)
 Router.events.on('routeChangeError', progress.finish)
+
 const Website = ({ Component, pageProps, router }) => {
   return (
-    <ChakraProvider theme={theme}>
-      <Fonts />
+    <TooltipProvider delayDuration={120}>
       <Layout router={router}>
-        <AnimatePresence exitBeforeEnter initial={true}>
+        <AnimatePresence mode="wait" initial>
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </Layout>
-    </ChakraProvider>
+    </TooltipProvider>
   )
 }
 

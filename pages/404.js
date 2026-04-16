@@ -1,37 +1,17 @@
-import NextLink from 'next/link'
-import Section from '../components/section'
+import Link from 'next/link'
+import Image from 'next/image'
 
-import {
-  Box,
-  Heading,
-  Text,
-  Container,
-  Divider,
-  Link,
-  Image,
-  Button
-} from '@chakra-ui/react'
-
-const NotFound = () => {
+export default function NotFound() {
   return (
-    <Container>
-      <Heading as="h1" textAlign="center" pb={8}>
-        Not found
-      </Heading>
-
-      <Section delay={0.3}>
-        <Image src="/404.jpg"></Image>
-      </Section>
-
-      <Divider my={6} />
-
-      <Box my={6} align="center">
-        <NextLink href="/">
-          <Button colorScheme="teal">Return to home</Button>
-        </NextLink>
-      </Box>
-    </Container>
+    <div className="container section" style={{ textAlign: 'center' }}>
+      <h1 style={{ fontSize: '2rem' }}>Page not found</h1>
+      <p className="muted">The page you are looking for does not exist.</p>
+      <div style={{ maxWidth: 780, margin: '2rem auto 0', border: '1px solid var(--border)', borderRadius: 14, overflow: 'hidden' }}>
+        <Image src="/404.jpg" alt="404 visual" width={1200} height={750} style={{ width: '100%', height: 'auto' }} />
+      </div>
+      <Link href="/" className="btn btn-primary" style={{ marginTop: '1.5rem' }}>
+        Return home
+      </Link>
+    </div>
   )
 }
-
-export default NotFound
