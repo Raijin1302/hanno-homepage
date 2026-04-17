@@ -37,7 +37,7 @@ export default function HomePage() {
             </p>
           </div>
           <div className="avatar-wrap">
-            <Image src="/images/hanno.png" alt="Hanno Nguyen" width={320} height={320} style={{ width: '100%', height: 'auto' }} />
+            <Image src="/images/hanno.png" alt="Hanno Nguyen" width={320} height={320} className="image-responsive" />
           </div>
         </div>
       </SectionWrapper>
