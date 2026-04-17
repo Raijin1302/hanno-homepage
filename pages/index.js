@@ -1,222 +1,101 @@
-import NextLink from 'next/link'
-import {
-  Button,
-  Container,
-  Box,
-  Heading,
-  SimpleGrid,
-  Image,
-  Link,
-  List,
-  ListItem,
-  Icon,
-  useColorModeValue
-} from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
-import Layout from '../components/layouts/article'
-import Section from '../components/section'
-import { BioSection, BioYear } from '../components/bio'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import SectionWrapper from '../components/section-wrapper'
+import ProjectCard from '../components/project-card'
+import { Badge } from '../components/ui/badge'
+import { contacts, experience, hero, projects, skills } from '../lib/content'
 
-import Paragraph from '../components/paragraph'
+export default function HomePage() {
+  const [tab, setTab] = useState('experience')
 
-import {
-  IoLogoInstagram,
-  IoLogoGithub,
-  IoLogoGoogle,
-  IoDocumentAttach
-} from 'react-icons/io5'
-
-const Page = () => {
   return (
-    <Layout>
-      <Container>
-        <Section delay={0.9}>
-          <Box
-            borderRadius="lg"
-            bg={useColorModeValue('#c4c9c736', 'whiteAlpha.200')}
-            p={3}
-            mb={6}
-            mt={6}
-            align="center"
-          >
-            Hello , I&apos;m a front-end developer based in Vietnam!
-          </Box>
-        </Section>
-        <Box display={{ md: 'flex' }}>
-          <Box flexGrow={1}>
-            <Heading as="h2" variant="page-title">
-              Hanno Nguyen
-            </Heading>
-            <p>Digital Learner (Developer / Designer / Analyst)</p>
-          </Box>
-          <Box
-            flexShrink={0}
-            mt={{ base: 4, md: 0 }}
-            ml={{ md: 6 }}
-            align="center"
-          >
-            <Image
-              borderColor="whiteAlpha.800"
-              borderWidth={2}
-              borderStyle="solid"
-              maxWidth="100px"
-              display="inline-block"
-              borderRadius="full"
-              src="/images/hanno.png"
-              alt="Profile Image"
-            />
-          </Box>
-        </Box>
-        <Section delay={0.1}>
-          <Heading as="h3" variant="section-title">
-            Work
-          </Heading>
-          <Paragraph>
-            Hanno aka <Link>Hoan</Link> is a Freelance Classified Analyst and a
-            Front-end Developer based in Ho Chi Minh City with an ambition for
-            building digital products he wants. Now he's seeking a Front-end
-            Developer position in a company that requires him to utilize his
-            skills, abilities and experience in the IT field to ensure the
-            company's success.
-          </Paragraph>
-          <Box align="center" my={4}>
-            <NextLink href="/works">
-              <Button
-                rightIcon={<ChevronRightIcon />}
-                backgroundColor="#00ebc7"
-                color="#00214d"
-                // colorScheme="teal.300"
-                variant="outline"
-                _hover={{ bg: '#aeffdd' }}
-              >
-                My porfolio
-              </Button>
-            </NextLink>
-          </Box>
-        </Section>
-        <Section delay={0.7}>
-          <Heading as="h3" variant="section-title">
-            Bio
-          </Heading>
-          <BioSection>
-            <BioYear>1995</BioYear>
-            Born in Vietnam
-          </BioSection>
-          <BioSection>
-            <BioYear>2016</BioYear>
-            Completed the BTech Program in the College of Bach Khoa about
-            system,networking
-          </BioSection>
-          <BioSection>
-            <BioYear>2017</BioYear>
-            Worked at Appota
-          </BioSection>
-          <BioSection>
-            <BioYear>2018</BioYear>
-            Worked at Webroot - (Remote)
-          </BioSection>
-          <BioSection>
-            <BioYear>2020 to present</BioYear>
-            Works as a freelance
-          </BioSection>
-        </Section>
-        <Section delay={0.9}>
-          <Heading as="h3" variant="section-title">
-            I ♥
-          </Heading>
-          <Paragraph>
-            Art, Music, <Link href="">UI Design</Link>, Reading,{' '}
-            <Link href="">Motion</Link>, Gaming, Machine Learning
-          </Paragraph>
-        </Section>
-        <Section delay={0.3}>
-          <Heading as="h3" variant="section-title">
-            On the web
-          </Heading>
-          <List>
-            <ListItem>
-              <Link href="https://github.com/Raijin1302" target="_blank">
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoGithub} />}
-                >
-                  @raijin1302
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="mailto: raijinnguyen1302@gmail.com
-"
-                target="_blank"
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoGoogle} />}
-                >
-                  @raijinnguyen1302
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="https://www.instagram.com/raijin1302/"
-                target="_blank"
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoLogoInstagram} />}
-                >
-                  @raijin1302
-                </Button>
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="https://drive.google.com/file/d/1k7PKgRjxmWqbS9F1gQ2IPdX5rqLhLyVg/view?usp=share_link"
-                target="_blank"
-              >
-                <Button
-                  variant="ghost"
-                  colorScheme="teal"
-                  leftIcon={<Icon as={IoDocumentAttach} />}
-                >
-                  @resume.pdf
-                </Button>
-              </Link>
-            </ListItem>
-          </List>
+    <div className="container" id="home">
+      <SectionWrapper className="section" delay={0.05}>
+        <div className="hero-grid">
+          <div>
+            <Badge>Available for Front-end roles</Badge>
+            <h1 className="hero-title" style={{ marginTop: '1rem' }}>
+              {hero.name}
+            </h1>
+            <p className="muted" style={{ fontSize: '1.15rem', marginTop: '.7rem' }}>
+              {hero.intro}
+            </p>
+            <p className="muted" style={{ marginTop: '1rem', maxWidth: 690 }}>
+              {hero.summary}
+            </p>
+            <div className="row" style={{ marginTop: '1.2rem' }}>
+              <a className="btn btn-primary" href="#contact">
+                Contact me
+              </a>
+              <a className="btn btn-outline" href="#projects">
+                View projects
+              </a>
+            </div>
+            <p className="muted" style={{ marginTop: '1rem' }}>
+              Based in {hero.location}
+            </p>
+          </div>
+          <div className="avatar-wrap">
+            <Image src="/images/hanno.png" alt="Hanno Nguyen" width={320} height={320} style={{ width: '100%', height: 'auto' }} />
+          </div>
+        </div>
+      </SectionWrapper>
 
-          {/* <SimpleGrid columns={[1, 2, 2]} gap={6}>
-            <GridItem
-              href="https://www.youtube.com/devaslife"
-              title="Dev as Life"
-              thumbnail={thumbYouTube}
-            >
-              My YouTube channel
-            </GridItem>
-            <GridItem
-              href="https://www.inkdrop.app/"
-              title="Inkdrop"
-              thumbnail={thumbInkdrop}
-            >
-              A Markdown note-taking app
-            </GridItem>
-          </SimpleGrid> */}
+      <SectionWrapper id="projects" title="Selected Projects" className="section" delay={0.1}>
+        <div className="grid-2">
+          {projects.map(project => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </SectionWrapper>
 
-          {/* <Box align="center" my={4}>
-            <NextLink href="/posts">
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                Popular posts
-              </Button>
-            </NextLink>
-          </Box> */}
-        </Section>
-      </Container>
-    </Layout>
+      <SectionWrapper id="experience" title="Experience & Skills" className="section" delay={0.15}>
+        <div className="row" style={{ marginBottom: '1rem' }}>
+          <button className={`btn ${tab === 'experience' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setTab('experience')}>
+            Experience
+          </button>
+          <button className={`btn ${tab === 'skills' ? 'btn-primary' : 'btn-ghost'}`} onClick={() => setTab('skills')}>
+            Skills
+          </button>
+        </div>
+        {tab === 'experience' ? (
+          <div style={{ display: 'grid', gap: '.8rem', maxWidth: 760 }}>
+            {experience.map(item => (
+              <div key={item.year} className="panel">
+                <p className="muted" style={{ margin: 0, fontWeight: 700, fontSize: '.9rem' }}>
+                  {item.year}
+                </p>
+                <p style={{ margin: '.35rem 0 0' }}>{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="badges">
+            {skills.map(skill => (
+              <Badge key={skill}>{skill}</Badge>
+            ))}
+          </div>
+        )}
+      </SectionWrapper>
+
+      <SectionWrapper id="contact" title="Contact" className="section" delay={0.2}>
+        <div className="panel" style={{ maxWidth: 760 }}>
+          <p className="muted" style={{ marginTop: 0 }}>
+            Open to collaboration and full-time opportunities.
+          </p>
+          <ul className="list">
+            {contacts.map(item => (
+              <li key={item.label} className="list-row">
+                <span className="muted">{item.label}</span>
+                <Link href={item.href} target="_blank" rel="noreferrer" style={{ fontWeight: 600 }}>
+                  {item.value}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </SectionWrapper>
+    </div>
   )
 }
-export default Page

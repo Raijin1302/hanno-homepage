@@ -1,39 +1,22 @@
-import { Container, Box, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
-import Section from '../components/section'
-import { WorkGridItem } from '../components/grid-item'
-
-import thumbHiepKhach from '../public/images/works/hiepkhach_01.png'
-import thumbNgaoThien from '../public/images/works/ngaothien_01.png'
 import Layout from '../components/layouts/article'
+import ProjectCard from '../components/project-card'
+import { projects } from '../lib/content'
 
 const Works = () => {
   return (
-    <Layout>
-      <Container>
-        <Heading as="h3" fontSize={20} mb={4} mt={4}>
-          Works
-        </Heading>
-        <SimpleGrid columns={[1, 1, 2]} gap={6}>
-          <Section>
-            <WorkGridItem
-              id="hiepkhach"
-              title="Hiệp Khách Giang Hồ"
-              thumbnail={thumbHiepKhach}
-            >
-              A homepage game website
-            </WorkGridItem>
-          </Section>
-          <Section>
-            <WorkGridItem
-              id="ngaothien"
-              title="Ngạo Thiên"
-              thumbnail={thumbNgaoThien}
-            >
-              A homepage game website
-            </WorkGridItem>
-          </Section>
-        </SimpleGrid>
-      </Container>
+    <Layout title="Works">
+      <div style={{ marginBottom: '2rem' }}>
+        <p className="section-title">Portfolio</p>
+        <h1 style={{ fontSize: '2rem', margin: 0 }}>Selected Works</h1>
+        <p className="muted" style={{ maxWidth: 700, marginTop: '.6rem' }}>
+          A snapshot of production projects focused on clean UI implementation and reliable front-end delivery.
+        </p>
+      </div>
+      <div className="grid-2">
+        {projects.map(project => (
+          <ProjectCard key={project.id} project={project} />
+        ))}
+      </div>
     </Layout>
   )
 }
