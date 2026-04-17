@@ -31,10 +31,10 @@ export default function NgaoThienPage() {
         </a>
         <div className="grid-2">
           <div className="card-image" style={{ border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden' }}>
-            <Image src="/images/works/ngaothien_01.png" alt="ngaothien screenshot 1" fill style={{ objectFit: 'cover' }} />
+            <Image src="/images/works/ngaothien_01.png" alt="ngaothien screenshot 1" layout="fill" objectFit="cover" />
           </div>
           <div className="card-image" style={{ border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden' }}>
-            <Image src="/images/works/ngaothien_02.png" alt="ngaothien screenshot 2" fill style={{ objectFit: 'cover' }} />
+            <Image src="/images/works/ngaothien_02.png" alt="ngaothien screenshot 2" layout="fill" objectFit="cover" />
           </div>
         </div>
       </div>

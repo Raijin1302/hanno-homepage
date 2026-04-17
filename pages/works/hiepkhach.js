@@ -31,10 +31,10 @@ export default function HiepKhachPage() {
         </a>
         <div className="grid-2">
           <div className="card-image" style={{ border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden' }}>
-            <Image src="/images/works/hiepkhach_02.png" alt="hiepkhach screenshot 1" fill style={{ objectFit: 'cover' }} />
+            <Image src="/images/works/hiepkhach_02.png" alt="hiepkhach screenshot 1" layout="fill" objectFit="cover" />
           </div>
           <div className="card-image" style={{ border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden' }}>
-            <Image src="/images/works/hiepkhach_03.png" alt="hiepkhach screenshot 2" fill style={{ objectFit: 'cover' }} />
+            <Image src="/images/works/hiepkhach_03.png" alt="hiepkhach screenshot 2" layout="fill" objectFit="cover" />
           </div>
         </div>
       </div>

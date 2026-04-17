@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   return (
     <Card>
       <div className="card-image">
-        <Image src={project.image} alt={project.title} fill style={{ objectFit: 'cover' }} />
+        <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" />
       </div>
       <CardHeader>
         <div style={{ display: 'flex', justifyContent: 'space-between', gap: '.5rem', alignItems: 'start' }}>
